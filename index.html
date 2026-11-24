@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Virtual</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho" id="topo">
+    <h1>Biblioteca Virtual</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="#catalogo">Catálogo de Livros</a></li>
+        <li><a href="#sugestoes">Sugerir Aquisição</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="catalogo" class="card">
+      <h2>Nosso Acervo</h2>
+      <label for="busca">Pesquisar livro:</label>
+      <input type="search" id="busca" placeholder="Digite o título...">
+
+      <ul class="lista-livros">
+        <li><article class="livro"><h3>O Senhor dos Anéis</h3></article></li>
+        <li><article class="livro"><h3>1984</h3></article></li>
+        <li><article class="livro"><h3>Dom Casmurro</h3></article></li>
+        <li><article class="livro"><h3>Fundação</h3></article></li>
+        <li><article class="livro"><h3>O Pequeno Príncipe</h3></article></li>
+        <li><article class="livro"><h3>Fahrenheit 451</h3></article></li>
+      </ul>
+      <p id="sem-resultados" hidden>Nenhum livro encontrado.</p>
+    </section>
+
+    <section id="sugestoes" class="card">
+      <h2>Sugerir Novo Livro</h2>
+      <form action="#" method="post" id="form-sugestao">
+        <label for="nome">Seu Nome</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="titulo">Título da Obra</label>
+        <input type="text" id="titulo" name="titulo">
+
+        <button type="submit">Enviar Sugestão</button>
+        <p id="mensagem" class="mensagem" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Desenvolvimento Web - Biblioteca Virtual</p>
+    <a href="#topo">Voltar ao topo</a>
+  </footer>
+</body>
+</html>

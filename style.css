@@ -1,0 +1,144 @@
+:root {
+  --cor-primaria: #2d3a4b;
+  --cor-destaque: #dd8436;
+  --cor-fundo: #f3f4f6;
+  --cor-card: #ffffff;
+  --cor-livro: #f1f2f4;
+  --cor-borda: #d9dce1;
+  --cor-texto: #1f2933;
+  --cor-erro: #c0392b;
+  --cor-sucesso: #2e7d32;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background: var(--cor-primaria);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+}
+.cabecalho h1 { margin: 0 0 1rem; }
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.menu a:hover { color: var(--cor-destaque); }
+
+/* Conteúdo */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.card h2 {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cor-destaque);
+}
+
+label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-size: 0.9rem;
+}
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+input:focus { outline: 2px solid var(--cor-destaque); }
+
+/* Grade de livros */
+.lista-livros {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.lista-livros li[hidden] { display: none; }
+
+.livro {
+  background: var(--cor-livro);
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  height: 100%;
+}
+.livro h3 { margin: 0; font-size: 0.95rem; }
+
+/* Formulário */
+button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: var(--cor-destaque);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover { filter: brightness(0.92); }
+
+.mensagem { min-height: 1.2em; font-weight: bold; }
+.mensagem.erro { color: var(--cor-erro); }
+.mensagem.sucesso { color: var(--cor-sucesso); }
+
+/* Rodapé */
+.rodape {
+  background: var(--cor-primaria);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+.rodape a { color: var(--cor-destaque); }
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  main {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  .card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
